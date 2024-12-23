@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Cosmic Experience</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298, #3a7bd5);
+            color: white;
+            overflow-x: hidden;
+            animation: bgColorShift 10s infinite alternate;
+        }
+
+        @keyframes bgColorShift {
+            0% { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+            50% { background: linear-gradient(135deg, #2a5298, #3a7bd5); }
+            100% { background: linear-gradient(135deg, #1e3c72, #3a7bd5); }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: #f7b733;
+            text-shadow: 0 0 10px #ff9800, 0 0 20px #f7b733;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #f7b733; }
+            to { text-shadow: 0 0 20px #ff9800; }
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f7b733;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            animation: backgroundPan 12s infinite linear;
+        }
+
+        @keyframes backgroundPan {
+            0% { background-position: center top; }
+            100% { background-position: center bottom; }
+        }
+
+        .hero h2 {
+            font-size: 4.5rem;
+            animation: fadeIn 2.5s ease-in-out;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); }
+            to { transform: scale(1); }
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            margin: 50px auto;
+            width: 80%;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        .carousel:hover img {
+            transform: scale(1.15);
+        }
+
+        .parallax {
+            background: url('C:\Users\Asus\Desktop\www\mark\Новая папка\малямбо\фотки\хостингсайт.html\ли.jpg') no-repeat center center/cover;
+            height: 600px;
+            background-attachment: fixed;
+            animation: parallaxEffect 10s infinite linear;
+        }
+
+        @keyframes parallaxEffect {
+            0% { background-position: center top; }
+            100% { background-position: center bottom; }
+        }
+
+        .content-box {
+            margin: 30px auto;
+            max-width: 850px;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .stars {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkling 2.5s infinite;
+        }
+
+        @keyframes twinkling {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .stars:nth-child(odd) {
+            animation-duration: 2s;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 3rem;
+            }
+
+            .gallery {
+                padding: 20px;
+            }
+
+            .carousel {
+                width: 100%;
+            }
+
+            .content-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Мы не просто группа, мы семья!</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#explore">Explore</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Добро пожаловать в 10-группу</h2>
+        <div class="stars" style="top:10%; left:20%;"></div>
+        <div class="stars" style="top:30%; left:50%;"></div>
+        <div class="stars" style="top:70%; left:80%;"></div>
+        <div class="stars" style="top:40%; left:90%;"></div>
+        <div class="stars" style="top:20%; left:60%;"></div>
+    </section>
+
+    <section id="gallery">
+        <h2>Наша галерея</h2>
+        <div class="gallery">
+            <img src="C:\Users\Asus\Desktop\www\mark\Новая папка\малямбо\фотки\хостингсайт.html\1.jpg" alt="Gallery Image 1">
+            <img src="C:\Users\Asus\Desktop\www\mark\Новая папка\малямбо\фотки\хостингсайт.html\77.jpg" alt="Gallery Image 2">
+            <img src="C:\Users\Asus\Desktop\www\mark\Новая папка\малямбо\фотки\хостингсайт.html\3.jpg" alt="Gallery Image 3">
+            <img src="C:\Users\Asus\Desktop\www\mark\Новая папка\малямбо\фотки\хостингсайт.html\Изображение WhatsApp 2024-12-22 в 18.31.42_f03c0406.jpg" alt="Gallery Image 4">
+            <img src="C:\Users\Asus\Desktop\www\mark\Новая папка\малямбо\фотки\хостингсайт.html\Изображение WhatsApp 2024-12-22 в 18.37.26_598fd48b.jpg" alt="Gallery Image 5">
+            <img src="C:\Users\Asus\Desktop\www\mark\Новая папка\малямбо\фотки\хостингсайт.html\78.jpg" alt="Gallery Image 6">
+        </div>
+    </section>
+
+    <section id="carousel">
+        <h2>Наш мастер и классный руководитель</h2>
+        <div class="carousel">
+            <img src="C:\Users\Asus\Desktop\www\mark\Новая папка\малямбо\фотки\хостингсайт.html\бахредин.jpg" alt="Carousel Image 1">
+            <img src="C:\Users\Asus\Desktop\www\mark\Новая папка\малямбо\фотки\хостингсайт.html\111111.jpg" alt="Carousel Image 2">
+            <img src="C:\Users\Asus\Desktop\www\mark\Новая папка\малямбо\фотки\хостингсайт.html\мастер.jpg" alt="Carousel Image 3">
+        </div>
+    </section>
+
+    <section class="parallax"></section>
+
+    <section id="explore">
+        <h2>Уделите немного внимания и прочитайте небольшие признания</h2>
+        <p class="content-box">Спасибо, что были со мной, хоть и не большое количество времени, но все же должен признать, 
+            что эти почти 2 года прошли быстро и очень запоминающимися. Вы оставили очень большой след в моей жизни. 
+            Отдельное слово хочу сказать нашему мастеру, и практически можно сказать 2 отцу, и правда в некоторых моментах 
+            Агай заменял отца. Спасибо вам. Также хочу отметить Бахредина агая, ему также огромное спасибо за то, что воспитывал 
+            и поддерживал в нелегких моментах. Спасибо!
+        </p>
+    </section>
+</body>
+</html>
